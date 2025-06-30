@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danh sách Bài viết - Quân H</title>
+  <!-- Font và CSS chung -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    body { font-family:'Inter',sans-serif; background:#111; color:#fff; }
+    a { text-decoration:none; color:inherit; }
+
+    .container { max-width:1200px; margin:6rem auto 2rem; padding:2rem; background:#f6f9fc; border-radius:8px; color:#333; margin-top: 80px; /* Adjust for fixed navbar height */ }
+    h1 { font-family:'Montserrat',sans-serif; font-size:2rem; margin-bottom:1.5rem; color:#111; }
+    .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1.5rem; }
+    .card { background:#fff; border-radius:8px; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1); }
+    .card img { width:100%; height:180px; object-fit:cover; }
+    .card-content { padding:1rem; }
+    .card-content h3 { font-size:1.25rem; margin-bottom:.5rem; color:#111; }
+    .card-content p { font-size:.95rem; line-height:1.5; color:#555; margin-bottom:1rem; }
+    .card-content a { font-weight:600; color:#2f73ff; }
+    .back { margin-top:2rem; display:inline-block; color:#2f73ff; }
+    .back:hover { color:#245ad1; }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .pagination button {
+      background-color: #2f73ff;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s ease;
+    }
+    .pagination button:hover:not(:disabled) {
+      background-color: #245ad1;
+    }
+    .pagination button:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+    .pagination span {
+      font-size: 1.1rem;
+      color: #333;
+    }
+
+    @media (max-width: 768px) {
+      .container { margin-top: 4rem; padding: 1rem; }
+      .grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div id="menu-placeholder"></div>
+
+  <div class="container">
+    <h1>Danh sách Bài viết</h1>
+    <div class="grid" id="posts-grid"></div>
+    <div class="pagination">
+      <button id="prevPage">Trước</button>
+      <span id="pageInfo">Trang 1</span>
+      <button id="nextPage">Tiếp theo</button>
+    </div>
+    <a href="index.html" class="back">← Về Trang chủ</a>
+  </div>
+
+  <script>
+    let allPosts = [];
+    let currentPage = 1;
+    const itemsPerPage = 6;
+
+    async function fetchData() {
+      const res = await fetch('posts.json');
+      return res.json();
+    }
+    function createCard(item) {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.innerHTML = `
+        <img src="${item.image}" alt="${item.title}">
+        <div class="card-content">
+          <h3>${item.title}</h3>
+          <p>${item.desc}</p>
+          <a href="${item.url}">Xem chi tiết</a>
+        </div>
+      `;
+      return card;
+    }
+    function displayPosts() {
+      const grid = document.getElementById('posts-grid');
+      grid.innerHTML = ''; // Xóa các bài viết hiện có
+
+      const startIndex = (currentPage - 1) * itemsPerPage;
+      const endIndex = startIndex + itemsPerPage;
+      const postsToShow = allPosts.slice(startIndex, endIndex);
+
+      postsToShow.forEach(item => grid.appendChild(createCard(item)));
+      updatePaginationControls();
+    }
+
+    function updatePaginationControls() {
+      const prevButton = document.getElementById('prevPage');
+      const nextButton = document.getElementById('nextPage');
+      const pageInfo = document.getElementById('pageInfo');
+
+      const totalPages = Math.ceil(allPosts.length / itemsPerPage);
+      pageInfo.textContent = `Trang ${currentPage} / ${totalPages}`;
+
+      prevButton.disabled = currentPage === 1;
+      nextButton.disabled = currentPage === totalPages || totalPages === 0;
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      allPosts = await fetchData(); // Lưu tất cả bài viết
+      displayPosts(); // Hiển thị trang đầu tiên
+
+      document.getElementById('prevPage').addEventListener('click', () => {
+        if (currentPage > 1) {
+          currentPage--;
+          displayPosts();
+        }
+      });
+
+      document.getElementById('nextPage').addEventListener('click', () => {
+        const totalPages = Math.ceil(allPosts.length / itemsPerPage);
+        if (currentPage < totalPages) {
+          currentPage++;
+          displayPosts();
+        }
+      });
+    });
+
+    // Tải menu.html vào placeholder
+    fetch('menu.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('menu-placeholder').innerHTML = data;
+            // Thêm script cho menu sau khi nội dung được tải
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('open');
+                    menuToggle.classList.toggle('open');
+                });
+            } else {
+                console.error('Menu elements not found after loading menu.html');
+            }
+        });
+  </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Trợ lý nhân tạo ChatGPT",
+    "url": "tools/tool3.html",
+    "image": "https://cdn.mediamart.vn/images/news/phien-ban-chatgpt-nao-ban-nen-dung_e5f47c45.jpg",
+    "desc": "ChatGPT là một công cụ trí tuệ nhân tạo (AI) được phát triển bởi công ty OpenAI (Mỹ). Đây là một chatbot – nghĩa là một chương trình máy tính có thể trò chuyện với con người bằng ngôn ngữ tự nhiên, giống như cách bạn đang nhắn tin với một người bạn."
+  },
+  {
+    "title": "Grok – Trợ lý AI “nổi loạn” từ Elon Musk",
+    "url": "tools/tool4.html",
+    "image": "https://www.pacisoft.vn/wp-content/uploads/2025/06/Grok-Logo.png",
+    "desc": "Grok là một chatbot AI do công ty xAI của Elon Musk phát triển, ra mắt vào năm 2023. Không giống các AI “lịch sự” như ChatGPT hay Google Gemini, Grok được thiết kế để trả lời với phong cách hài hước, mỉa mai và... hơi “ngổ ngáo” – đúng như phong cách thường thấy của Elon Musk."
+  },
+  {
+    "title": "Gemini – Trí tuệ nhân tạo đa năng của Google",
+    "url": "tools/tool5.html",
+    "image": "https://www.gstatic.com/lamda/images/gemini_thumbnail_v2_55a4e3be7b83404a620e5.jpg",
+    "desc": "Gemini là nền tảng AI mới nhất đến từ Google, mang lại trải nghiệm thông minh, linh hoạt và trực quan trong việc xử lý văn bản, hình ảnh, âm thanh và nhiều hơn thế."
+  },
+  {
+    "title": "Tạo Bài Thuyết Trình Chuyên Nghiệp Chỉ Trong Vài Phút Với Gamma AI",
+    "url": "tools/tool6.html",
+    "image": "https://tuilathao.com/wp-content/uploads/2024/03/Gamma-App-%E2%80%93-Tim-hieu-ve-AI-tao-slide-tu-dong.png",
+    "desc": "Gamma AI là nền tảng giúp bạn tạo bài thuyết trình nhanh, đẹp và logic nhờ trí tuệ nhân tạo – không cần biết thiết kế, không cần chỉnh từng dòng từng khung như PowerPoint truyền thống."
+  },
+  {
+    "title": "🚀 Cobalt.tools – Lưu mọi nội dung yêu thích, không giới hạn",
+    "url": "tools/tool7.html",
+    "image": "https://anonyviet.com/wp-content/uploads/2025/02/cobalttools-1-1.jpg",
+    "desc": "Cobalt.tools giúp bạn tải xuống video, âm thanh, hình ảnh từ các nền tảng như YouTube, TikTok, Instagram… chỉ bằng cách dán link – không pop-up, không paywall, chỉ thuần công nghệ và trải nghiệm người dùng tốt nhất."
+  },
+  {
+    "title": "🚀 Dành riêng cho bạn: Khóa học Tạo Truyện Tranh Tự Động Bằng AI",
+    "url": "tools/tool8.html",
+    "image": "https://s3-ap-southeast-1.amazonaws.com/vmixvn/wp-media-folder-vmix-viet-nam/wp-content/uploads/2024/08/m_o_s_ng_t_o_ai.jpg",
+    "desc": "Nếu bạn là người mới bắt đầu và muốn học cách tạo truyện tranh bằng Ai một cách bài bản, hiệu quả và sáng tạo, hãy tham gia ngay khóa học của chúng tôi."
+  }
+]
