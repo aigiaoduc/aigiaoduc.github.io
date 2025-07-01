@@ -16,5 +16,11 @@
     "image": "https://res.cloudinary.com/dejnvixvn/image/upload/v1751163556/6159d8c6-aa2b-4743-aab9-82fcbbf98a01.png",
     "desc": "Trò chơi giúp người chơi kéo và thả các mảnh ghép để hoàn thành bức tranh động vật.",
     "url": "trochoi/trochoi3.html"
+  },
+  {
+    "title": "🧮Ghép Phép Tính: Tìm Số Đúng",
+    "image": "https://res.cloudinary.com/dejnvixvn/image/upload/v1751359412/b1e3e962-0e37-4867-a6f4-86d7f0f0708c.png",
+    "desc": "Trò chơi rèn luyện tư duy toán học ngược: từ một kết quả cho trước, người chơi phải chọn đúng hai số và phép tính phù hợp để tạo ra kết quả đó. Có nhiều chế độ như cộng, trừ, nhân, chia hoặc kết hợp. Học sinh sẽ học cách suy luận nhanh, chính xác và phản xạ tốt với các phép tính cơ bản.",
+    "url": "trochoi/trochoi4.html"
   }
 ]
