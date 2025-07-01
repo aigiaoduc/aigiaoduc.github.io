@@ -169,6 +169,12 @@
       <div class="grid" id="experiments-grid"></div>
       <a href="thinghiemao.html" class="view-all">Xem tất cả thí nghiệm →</a>
     </div>
+
+    <div class="section">
+      <h2>Khóa học mới</h2>
+      <div class="grid" id="courses-grid"></div>
+      <a href="khoahoconline.html" class="view-all">Xem tất cả khóa học →</a>
+    </div>
   </div>
 
   <script>
@@ -200,6 +206,7 @@
     renderSection('tools.json', 'tools-grid', 4);
     renderSection('games.json', 'games-grid', 4);
     renderSection('thinghiemao.json', 'experiments-grid', 4);
+    renderSection('khoahoconline.json', 'courses-grid', 4);
 
     // Tải menu.html vào placeholder
     fetch('menu.html')
