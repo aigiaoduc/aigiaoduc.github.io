@@ -1,26 +1,8 @@
 [
   {
-    "title": "Khóa học AI cơ bản",
-    "desc": "Giới thiệu về trí tuệ nhân tạo và các ứng dụng cơ bản.",
-    "image": "https://res.cloudinary.com/dejnvixvn/image/upload/v1750259721/cf49c82a-0b48-4f49-98d3-1bbe1d3d_u0fwxn.jpg",
-    "url": "khoahoc/khoahoc1.html"
-  },
-  {
-    "title": "Lập trình Python cho AI",
-    "desc": "Học Python từ cơ bản đến nâng cao để phát triển các dự án AI.",
-    "image": "https://res.cloudinary.com/dejnvixvn/image/upload/v1750259721/cf49c82a-0b48-4f49-98d3-1bbe1d3d_u0fwxn.jpg",
-    "url": "khoahoc/khoahoc2.html"
-  },
-  {
-    "title": "Machine Learning từ A đến Z",
-    "desc": "Khám phá các thuật toán Machine Learning và cách triển khai chúng.",
-    "image": "https://res.cloudinary.com/dejnvixvn/image/upload/v1750259721/cf49c82a-0b48-4f49-98d3-1bbe1d3d_u0fwxn.jpg",
-    "url": "khoahoc/khoahoc3.html"
-  },
-  {
-    "title": "Deep Learning và Mạng nơ-ron",
-    "desc": "Tìm hiểu sâu về Deep Learning và xây dựng các mô hình mạng nơ-ron phức tạp.",
-    "image": "https://res.cloudinary.com/dejnvixvn/image/upload/v1750259721/cf49c82a-0b48-4f49-98d3-1bbe1d3d_u0fwxn.jpg",
-    "url": "khoahoc/khoahoc4.html"
+    "title": "🚀Khóa học Tạo Truyện Tranh Tự Động Bằng AI",
+    "desc": "Khóa học thiết kế truyện tranh tự động bằng AI, hoàn toàn tự động",
+    "image": "https://s3-ap-southeast-1.amazonaws.com/vmixvn/wp-media-folder-vmix-viet-nam/wp-content/uploads/2024/08/m_o_s_ng_t_o_ai.jpg",
+    "url": "khoahoconline/khoahoconline1.html"
   }
 ]
