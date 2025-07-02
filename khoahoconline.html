@@ -119,7 +119,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', async () => {
-      allCourses = await fetchData(); // Lưu tất cả khóa học
+      allCourses = (await fetchData()).reverse(); // Lưu tất cả khóa học và đảo ngược thứ tự
       displayCourses(); // Hiển thị trang đầu tiên
 
       document.getElementById('prevPage').addEventListener('click', () => {

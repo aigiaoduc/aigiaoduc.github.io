@@ -122,7 +122,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', async () => {
-      allTools = await fetchTools();
+      allTools = (await fetchTools()).reverse();
       displayTools();
 
       document.getElementById('prevPage').addEventListener('click', () => {

@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thí nghiệm ảo - Quân H</title>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thí nghiệm ảo - Quân H</title>
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <style>
@@ -163,7 +159,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', async () => {
-      allExperiments = await fetchData('thinghiemao.json'); // Lưu tất cả thí nghiệm
+      allExperiments = (await fetchData('thinghiemao.json')).reverse(); // Lưu tất cả thí nghiệm và đảo ngược thứ tự
       displayExperiments(); // Hiển thị trang đầu tiên
 
       document.getElementById('prevPage').addEventListener('click', () => {

@@ -119,7 +119,7 @@
     }
 
     document.addEventListener('DOMContentLoaded', async () => {
-      allPosts = await fetchData(); // Lưu tất cả bài viết
+      allPosts = (await fetchData()).reverse(); // Lưu tất cả bài viết và đảo ngược thứ tự
       displayPosts(); // Hiển thị trang đầu tiên
 
       document.getElementById('prevPage').addEventListener('click', () => {
