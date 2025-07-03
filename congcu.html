@@ -6,6 +6,9 @@
   <title>Danh sách Công cụ - Quân H</title>
   <!-- Font và CSS chung -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="button.css">
   <style>
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     body { font-family:'Inter',sans-serif; background:#111; color:#fff; }
@@ -19,7 +22,7 @@
     .card-content { padding:1rem; }
     .card-content h3 { font-size:1.25rem; margin-bottom:.5rem; color:#111; }
     .card-content p { font-size:.95rem; line-height:1.5; color:#555; margin-bottom:1rem; }
-    .card-content a { font-weight:600; color:#2f73ff; }
+    .card-content a { font-weight:600; }
     .back { margin-top:2rem; display:inline-block; color:#2f73ff; }
     .back:hover { color:#245ad1; }
 
@@ -72,6 +75,8 @@
     <a href="index.html" class="back">← Về Trang chủ</a>
   </div>
 
+  <div id="footer-placeholder"></div>
+
   <script>
     let allTools = [];
     let currentPage = 1;
@@ -90,7 +95,7 @@
         <div class="card-content">
           <h3>${item.title}</h3>
           <p>${item.desc}</p>
-          <a href="${item.url}">Xem chi tiết</a>
+          <a href="${item.url}" class="detail-btn">Xem chi tiết</a>
         </div>
       `;
       return card;
@@ -158,6 +163,13 @@
             } else {
                 console.error('Menu elements not found after loading menu.html');
             }
+        });
+
+    // Tải footer.html vào placeholder
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
         });
   </script>
 </body>

@@ -6,6 +6,9 @@
   <title>Website Cá Nhân - Quân H</title>
   <!-- Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="button.css">
   <style>
     /* Reset */
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -87,7 +90,7 @@
       padding-bottom: 0.5rem; /* Khoảng cách giữa chữ và gạch chân */
       display: inline-block; /* Đảm bảo gạch chân chỉ dưới văn bản */
     }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 1.5rem; } /* Giảm kích thước tối thiểu của cột */
+    .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; }
     .card {
       background: #fff;
       border-radius: 8px;
@@ -177,6 +180,8 @@
     </div>
   </div>
 
+  <div id="footer-placeholder"></div>
+
   <script>
     async function fetchData(url) {
       const res = await fetch(url);
@@ -190,7 +195,7 @@
         <div class="card-content">
           <h3>${item.title}</h3>
           <p>${item.desc}</p>
-          <a href="${item.url}">Xem chi tiết</a>
+          <a href="${item.url}" class="detail-btn">Xem chi tiết</a>
         </div>
       `;
       return card;
@@ -199,7 +204,9 @@
       const data = await fetchData(jsonFile);
       const grid = document.getElementById(gridId);
       // Lấy các mục cuối cùng (mới nhất) dựa trên giới hạn
-      data.slice(-limit).forEach(item => grid.appendChild(createCard(item)));
+      const recentItems = data.slice(-limit);
+      // Đảo ngược lại để hiển thị mục mới nhất ở đầu
+      recentItems.reverse().forEach(item => grid.appendChild(createCard(item)));
     }
     renderSection('posts.json', 'posts-grid', 4);
     renderSection('videos.json', 'videos-grid', 4);
@@ -225,6 +232,13 @@
             } else {
                 console.error('Menu elements not found after loading menu.html');
             }
+        });
+    
+    // Tải footer.html vào placeholder
+    fetch('footer.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('footer-placeholder').innerHTML = data;
         });
   </script>
 </body>
