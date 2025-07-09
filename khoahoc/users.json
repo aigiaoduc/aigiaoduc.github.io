@@ -1,0 +1,17 @@
+[
+    {
+        "username": "user1",
+        "password": "password1",
+        "courses": ["khoahoc_ungdungcanva"]
+    },
+    {
+        "username": "user2",
+        "password": "password2",
+        "courses": ["khoahoc_ungdung_ai_truyentranh"]
+    },
+    {
+        "username": "admin",
+        "password": "adminpassword",
+        "courses": ["khoahoc_ungdungcanva", "khoahoc_ungdung_ai_truyentranh"]
+    }
+]

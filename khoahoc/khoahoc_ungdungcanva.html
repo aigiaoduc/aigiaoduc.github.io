@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khóa Học Xây Dựng Ứng Dụng Học Tập - Hệ thống Khóa học</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@400;600;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        .header {
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #a7bfe8 0%, #6190e8 100%);
+            color: white;
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            margin-top: 2rem;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: moveCircle1 10s infinite alternate;
+        }
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: moveCircle2 12s infinite alternate;
+        }
+        @keyframes moveCircle1 {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(100px, 50px); }
+        }
+        @keyframes moveCircle2 {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-80px, -30px); }
+        }
+        .card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(135deg, #e0f2f7 0%, #c2e9fb 100%); /* Màu nền nhẹ nhàng */
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+        }
+        .card h4 {
+            color: #007bff; /* Màu xanh dương cho tiêu đề */
+        }
+        .card p {
+            color: #4a5568; /* Màu xám đậm cho mô tả */
+        }
+        .card a {
+            background-color: #4299e1; /* Màu xanh dương cho nút */
+        }
+        .card a:hover {
+            background-color: #3182ce; /* Màu xanh đậm hơn khi hover */
+        }
+        .logout-button {
+            background-color: #ef4444;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .logout-button:hover {
+            background-color: #dc2626;
+            transform: translateY(-2px);
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        p {
+            font-family: 'Inter', sans-serif;
+        }
+        .main-layout {
+            display: flex;
+            justify-content: center;
+            gap: 1rem; /* Khoảng cách giữa các cột */
+            max-width: 1200px; /* Giới hạn chiều rộng của nội dung chính */
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        .content-wrapper {
+            flex-grow: 1; /* Cho phép nội dung chính mở rộng */
+            width: 100%;
+        }
+        @media (max-width: 1024px) {
+            .main-layout {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+<script src="script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const isLoggedIn = localStorage.getItem('isLoggedIn');
+        const currentUser = JSON.parse(localStorage.getItem('currentUser'));
+        const courseId = 'khoahoc_ungdungcanva'; // ID của khóa học này
+
+        if (isLoggedIn !== 'true' || !currentUser || !currentUser.courses || !currentUser.courses.includes(courseId)) {
+            alert('Bạn không có quyền truy cập khóa học này. Vui lòng đăng nhập hoặc liên hệ quản trị viên.');
+            window.location.href = 'login.html'; // Chuyển hướng về trang đăng nhập
+        }
+    });
+</script>
+</head>
+<body>
+    <header class="header">
+        <div class="container flex justify-between items-center">
+            <h1 class="text-3xl font-bold">Khóa Học Xây Dựng Ứng Dụng Học Tập</h1>
+            <nav>
+                <button onclick="logoutUser()" class="logout-button">Đăng xuất</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-layout">
+        <div class="content-wrapper">
+            <main class="container my-8">
+                <p class="text-xl text-center mb-10 leading-relaxed text-gray-700">Nâng tầm kỹ năng dạy học của bạn với AI. Khám phá các bí quyết và thủ thuật để tạo ra những ứng dụng học tập chuyên nghiệp, ấn tượng và thu hút mọi học sinh.</p>
+                <section id="content" class="my-12">
+                    <h3 class="text-4xl font-bold text-center mb-10 text-gray-800">Nội dung Khóa học: Xây Dựng Ứng Dụng Học Tập</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="card">
+                            <h4 class="text-2xl font-bold mb-4 text-blue-700">Phần 1: Giới Thiệu & Làm Quen Với Canva</h4>
+                            <p class="text-gray-700">Tìm hiểu tổng quan về Canva, giao diện người dùng, và các công cụ cơ bản để bắt đầu hành trình thiết kế của bạn.</p>
+                            <a href="https://kontum01-my.sharepoint.com/:v:/g/personal/quanth_c12sb_st_gdkontum_edu_vn/Ec5gVvnqoINPu6qpj_rIKcMBdaidwJhSw4lQhSSC0E-oEw?e=RnWlnv" target="_blank" class="mt-6 inline-block bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Xem video</a>
+                        </div>
+                        <div class="card">
+                            <h4 class="text-2xl font-bold mb-4 text-blue-700">Phần 2: Khám Phá Thư Viện Thành Phần & Tài Nguyên</h4>
+                            <p class="text-gray-700">Hướng dẫn sử dụng hiệu quả các thành phần, hình ảnh, biểu tượng, và font chữ có sẵn trong Canva để làm phong phú thiết kế.</p>
+                            <a href="https://kontum01-my.sharepoint.com/:v:/g/personal/quanth_c12sb_st_gdkontum_edu_vn/ERYd2sZnsNhAjYfzOxkBrAABogFfRt8Oc3yEEJyA7T6CsA?e=MyAvtC" target="_blank" class="mt-6 inline-block bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Xem video</a>
+                        </div>
+                        <div class="card">
+                            <h4 class="text-2xl font-bold mb-4 text-blue-700">Phần 3: Bắt đầu với Canva AI: Chọn nền tảng lập trình ứng dụng</h4>
+                            <p class="text-gray-700">Tìm hiểu cách sử dụng Canva AI để chọn nền tảng phù hợp cho việc lập trình ứng dụng của bạn.</p>
+                            <a href="#" target="_blank" class="mt-6 inline-block bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Xem video</a>
+                        </div>
+                        <div class="card">
+                            <h4 class="text-2xl font-bold mb-4 text-blue-700">Phần 4: Lên ý tưởng ứng dụng dạy học cùng ChatGPT</h4>
+                            <p class="text-gray-700">Khám phá cách tận dụng ChatGPT để lên ý tưởng và phát triển ứng dụng dạy học sáng tạo.</p>
+                            <a href="#" target="_blank" class="mt-6 inline-block bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Xem video</a>
+                        </div>
+                        <div class="card">
+                            <h4 class="text-2xl font-bold mb-4 text-blue-700">Phần 5: Tạo ứng dụng tự động bằng cách nhập nội dung</h4>
+                            <p class="text-gray-700">Hướng dẫn tạo ứng dụng một cách tự động chỉ bằng cách nhập nội dung mong muốn.</p>
+                            <a href="#" target="_blank" class="mt-6 inline-block bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Xem video</a>
+                        </div>
+                        <div class="card">
+                            <h4 class="text-2xl font-bold mb-4 text-blue-700">Phần 6: Chỉnh sửa chi tiết trong ứng dụng: Nhanh, gọn, hiệu quả</h4>
+                            <p class="text-gray-700">Học cách chỉnh sửa các chi tiết trong ứng dụng một cách nhanh chóng, gọn gàng và hiệu quả.</p>
+                            <a href="#" target="_blank" class="mt-6 inline-block bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Xem video</a>
+                        </div>
+                        <div class="card">
+                            <h4 class="text-2xl font-bold mb-4 text-blue-700">Phần 7: Bảo vệ sản phẩm: Gắn bản quyền cho ứng dụng</h4>
+                            <p class="text-gray-700">Tìm hiểu các bước để bảo vệ sản phẩm của bạn bằng cách gắn bản quyền cho ứng dụng.</p>
+                            <a href="#" target="_blank" class="mt-6 inline-block bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Xem video</a>
+                        </div>
+                        <div class="card">
+                            <h4 class="text-2xl font-bold mb-4 text-blue-700">Phần 8: Tích hợp hình ảnh, âm thanh vào ứng dụng</h4>
+                            <p class="text-gray-700">Hướng dẫn cách tích hợp hình ảnh và âm thanh để làm cho ứng dụng của bạn thêm sinh động.</p>
+                            <a href="#" target="_blank" class="mt-6 inline-block bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Xem video</a>
+                        </div>
+                        <div class="card">
+                            <h4 class="text-2xl font-bold mb-4 text-blue-700">Phần 9: Đăng ký và kết nối ứng dụng với hệ thống đám mây</h4>
+                            <p class="text-gray-700">Tìm hiểu quy trình đăng ký và kết nối ứng dụng của bạn với các dịch vụ đám mây.</p>
+                            <a href="#" target="_blank" class="mt-6 inline-block bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Xem video</a>
+                        </div>
+                        <div class="card">
+                            <h4 class="text-2xl font-bold mb-4 text-blue-700">Phần 10: Chèn hình ảnh vào giao diện ứng dụng bằng Canva AI</h4>
+                            <p class="text-gray-700">Sử dụng Canva AI để chèn hình ảnh một cách dễ dàng vào giao diện ứng dụng.</p>
+                            <a href="#" target="_blank" class="mt-6 inline-block bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Xem video</a>
+                        </div>
+                        <div class="card">
+                            <h4 class="text-2xl font-bold mb-4 text-blue-700">Phần 11: Thêm âm thanh, giọng đọc vào ứng dụng giảng dạy</h4>
+                            <p class="text-gray-700">Hướng dẫn cách thêm âm thanh và giọng đọc để nâng cao trải nghiệm người dùng trong ứng dụng giảng dạy.</p>
+                            <a href="#" target="_blank" class="mt-6 inline-block bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Xem video</a>
+                        </div>
+                        <div class="card">
+                            <h4 class="text-2xl font-bold mb-4 text-blue-700">Phần 12: Xuất bản ứng dụng thành website hoặc chia sẻ trực tuyến</h4>
+                            <p class="text-gray-700">Tìm hiểu cách xuất bản ứng dụng của bạn thành một trang web hoặc chia sẻ trực tuyến.</p>
+                            <a href="#" target="_blank" class="mt-6 inline-block bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Xem video</a>
+                        </div>
+                        <div class="card">
+                            <h4 class="text-2xl font-bold mb-4 text-blue-700">Phần 13: Tổng kết và định hướng sử dụng ứng dụng sau khóa học</h4>
+                            <p class="text-gray-700">Tổng kết khóa học và định hướng cách sử dụng ứng dụng hiệu quả sau khi hoàn thành.</p>
+                            <a href="#" target="_blank" class="mt-6 inline-block bg-blue-500 text-white px-5 py-2 rounded-lg hover:bg-blue-600 transition duration-300">Xem video</a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <footer class="bg-gray-800 text-white py-6 mt-12">
+        <div class="container text-center">
+            <p>&copy; 2025 Hệ thống Khóa học. Tất cả quyền được bảo lưu.</p>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const courseCards = document.querySelectorAll('.card');
+
+            courseCards.forEach(card => {
+                card.addEventListener('click', function(event) {
+                    // Ngăn chặn sự kiện click lan truyền nếu click vào thẻ <a> bên trong
+                    if (event.target.tagName === 'A') {
+                        return;
+                    }
+                    const videoLink = this.querySelector('a');
+                    if (videoLink) {
+                        window.open(videoLink.href, '_blank');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
