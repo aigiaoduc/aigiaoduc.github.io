@@ -5,19 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bảng điều khiển Khóa học</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
+            font-family: 'Roboto Mono', monospace;
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%); /* Dark, techy gradient */
+            color: #e2e8f0; /* Light gray text */
             margin: 0;
             padding: 0;
+            overflow-x: hidden;
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="%234a5568" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grid)"/></svg>');
+            opacity: 0.1;
+            z-index: -1;
         }
         .header {
-            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(90deg, #63b3ed 0%, #805ad5 100%); /* Blue to purple gradient */
             color: white;
             padding: 1.5rem 0;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            font-family: 'Orbitron', sans-serif;
         }
         .container {
             max-width: 1200px;
@@ -25,39 +40,72 @@
             padding: 0 1rem;
         }
         .logout-button {
-            background-color: #ef4444;
+            background-color: #e53e3e; /* Red for logout */
             color: white;
             padding: 0.75rem 1.5rem;
             border-radius: 8px;
-            font-weight: 600;
+            font-weight: 700;
             transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
         }
         .logout-button:hover {
-            background-color: #dc2626;
+            background-color: #c53030;
             transform: translateY(-2px);
         }
         .course-card {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
+            background-color: rgba(26, 32, 44, 0.8); /* Semi-transparent dark background */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+            margin-bottom: 25px;
+            border: 1px solid #4a5568;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
         }
         .course-card h3 {
-            color: #007bff;
-            margin-bottom: 10px;
+            color: #63b3ed; /* Techy blue */
+            margin-bottom: 15px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            text-shadow: 0 0 8px rgba(99, 179, 237, 0.3);
+        }
+        .course-card p {
+            color: #a0aec0; /* Lighter gray for description */
+            margin-bottom: 20px;
+            font-size: 1rem;
         }
         .course-card a {
             display: inline-block;
-            background-color: #007bff;
+            background: linear-gradient(90deg, #63b3ed 0%, #805ad5 100%);
             color: white;
-            padding: 8px 15px;
-            border-radius: 4px;
+            padding: 10px 20px;
+            border-radius: 6px;
             text-decoration: none;
-            margin-top: 10px;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
         }
         .course-card a:hover {
-            background-color: #0056b3;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(90deg, #805ad5 0%, #63b3ed 100%);
+        }
+        h2 {
+            color: #63b3ed;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 10px rgba(99, 179, 237, 0.5);
+            margin-bottom: 20px;
+        }
+        h3.mb-4 { /* For "Các khóa học của bạn" */
+            color: #a0aec0;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1.5rem;
+            margin-top: 30px;
         }
     </style>
 </head>
@@ -74,7 +122,7 @@
     <main class="container my-8">
         <h2 class="text-2xl font-bold mb-6">Chào mừng, <span id="usernameDisplay"></span>!</h2>
         <h3 class="text-xl font-bold mb-4">Các khóa học của bạn:</h3>
-        <div id="coursesList">
+        <div id="coursesList" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Các khóa học sẽ được tải ở đây bằng JavaScript -->
         </div>
     </main>
@@ -117,7 +165,7 @@
                         }
                     });
                 } else {
-                    coursesList.innerHTML = '<p>Bạn chưa có khóa học nào được cấp quyền truy cập.</p>';
+                    coursesList.innerHTML = '<p class="text-center text-gray-400">Bạn chưa có khóa học nào được cấp quyền truy cập.</p>';
                 }
             } else {
                 // Nếu không có currentUser, chuyển hướng về trang đăng nhập (đã được xử lý trong script.js)

@@ -11,7 +11,7 @@
     },
     {
         "username": "admin",
-        "password": "adminpassword",
+        "password": "admin123",
         "courses": ["khoahoc_ungdungcanva", "khoahoc_ungdung_ai_truyentranh"]
     }
 ]
