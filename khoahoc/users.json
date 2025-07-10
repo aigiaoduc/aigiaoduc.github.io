@@ -28,5 +28,10 @@
         "username": "htindb1983@gmail.com",
         "password": "htindb1983",
         "courses": ["khoahoc_ungdungcanva"]
+    },
+    {
+        "username": "quangtuan",
+        "password": "quangtuan",
+        "courses": ["khoahoc_ungdungcanva"]
     }
 ]
