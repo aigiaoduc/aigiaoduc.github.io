@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đã Đến Lúc Ngừng Làm Slide Thủ Công – Hãy Để AI Thuyết Trình Giúp Bạn!</title>
+    <meta name="description" content="Khám phá 13 công cụ AI hàng đầu giúp bạn tạo slide thuyết trình chuyên nghiệp, nhanh chóng và đẹp mắt, tiết kiệm thời gian và nâng cao chất lượng bài trình bày.">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Đã Đến Lúc Ngừng Làm Slide Thủ Công – Hãy Để AI Thuyết Trình Giúp Bạn!">
+    <meta property="og:description" content="Khám phá 13 công cụ AI hàng đầu giúp bạn tạo slide thuyết trình chuyên nghiệp, nhanh chóng và đẹp mắt, tiết kiệm thời gian và nâng cao chất lượng bài trình bày.">
+    <meta property="og:image" content="https://slidemodel.com/wp-content/uploads/FF0364-01-artificial-intelligence-slides-template-16x9-1.jpg">
+    <meta property="og:url" content="https://aigiaoduc.github.io/baiviet/baiviet14.html">
+    <meta property="og:type" content="article">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&family=Quicksand:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+        h1, h2, h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #1a202c;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/cubes.png');
+            opacity: 0.1;
+            z-index: 0;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .hero-content h1 {
+            color: white; /* Đảm bảo màu chữ trắng */
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4); /* Đổ bóng chữ */
+            animation: fadeInUp 1s ease-out;
+        }
+        .hero-content p {
+            color: #e0e0e0; /* Màu chữ sáng hơn cho mô tả */
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); /* Đổ bóng chữ */
+            animation: fadeInUp 1s ease-out 0.3s backwards; /* Trễ hơn một chút */
+        }
+        .brain-icon {
+            font-size: 3rem;
+            color: #ff69b4; /* Màu hồng nổi bật */
+            animation: pulse 1.5s infinite ease-in-out;
+            display: inline-block;
+            margin-right: 0.5rem;
+        }
+        .card {
+            background-color: white;
+            border-radius: 1rem;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 20px rgba(0, 0, 0, 0.15);
+        }
+        .tool-button {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #4c51bf;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .tool-button:hover {
+            background-color: #5a67d8;
+            transform: translateY(-2px);
+        }
+        .content-section {
+            max-width: 960px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        .image-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 0.75rem;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            list-style-type: none; /* Loại bỏ dấu chấm đầu dòng */
+            padding-left: 0; /* Đảm bảo không có padding mặc định */
+        }
+        ul li::before {
+            content: none; /* Loại bỏ dấu chấm mặc định */
+        }
+        /* Keyframe Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 4rem 1rem;
+            }
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            .hero-section p {
+                font-size: 1rem;
+            }
+            .content-section {
+                margin: 1rem auto;
+            }
+            .card {
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Menu Section -->
+    <style>
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem 2rem;
+      z-index: 100;
+      background: rgba(0, 0, 0, 0.5);
+      transition: top 0.3s;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .logo-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #2f73ff;
+    }
+    .logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .nav-links { display: flex; gap: 2rem; font-weight: 600; }
+    .nav-links a { font-size: 1rem; color: #fff; text-decoration: none; transition: color 0.3s; }
+    .nav-links a:hover { color: #2f73ff; }
+    .cta {
+      padding: 0.6rem 1.4rem;
+      background: #2f73ff;
+      border-radius: 999px;
+      font-weight: 600;
+      color: #fff;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+    .cta:hover { background: #245ad1; }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 0.3rem;
+    }
+    .menu-toggle span {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      border-radius: 5px;
+      transition: all 0.3s ease-in-out;
+    }
+    .menu-toggle.open span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+    .menu-toggle.open span:nth-child(2) { opacity: 0; }
+    .menu-toggle.open span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .navbar { padding: 1rem; }
+      .nav-links { display: none; flex-direction: column; width: 100%; background: rgba(0,0,0,0.8); position: absolute; top: 60px; left: 0; padding: 1rem; }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 0.5rem 0; text-align: center; }
+      .cta { display: none; }
+      .menu-toggle { display: flex; }
+    }
+</style>
+<nav class="navbar">
+    <div class="logo">
+      <img src="https://res.cloudinary.com/dejnvixvn/image/upload/v1747379764/ChatGPT_Image_Mar_31_2025_02_03_41_PM_qxeaeq.png" alt="Logo Quân H" class="logo-img">
+      <span class="logo-text">Quân H</span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="../index.html">Trang chủ</a>
+      <a href="../baiviet.html">Bài viết</a>
+      <a href="../congcu.html">Công cụ</a>
+      <a href="../video.html">Video</a>
+      <a href="../trochoi.html">Trò chơi</a>
+      <a href="../thinghiemao.html">Thí nghiệm ảo</a>
+      <a href="../khoahoconline.html">Khóa học</a>
+    </div>
+    <a href="../lienhe.html" class="cta">Liên hệ</a>
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </nav>
+<script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+      menuToggle.classList.toggle('open');
+    });
+</script>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                <i class="fas fa-brain brain-icon"></i> Đã Đến Lúc Ngừng Làm Slide Thủ Công – Hãy Để AI Thuyết Trình Giúp Bạn!
+            </h1>
+            <p class="text-lg md:text-xl opacity-90">Nếu bạn từng là người ngồi hàng giờ để chỉnh sửa từng dòng chữ, căn chỉnh từng khung hình trong PowerPoint – bạn không đơn độc.</p>
+            <p class="text-lg md:text-xl opacity-90 mt-2">Có lẽ đã đến lúc thay đổi. Và AI chính là cánh tay phải mới của bạn.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="content-section">
+        <p class="text-base md:text-lg leading-relaxed mb-6">Trong thời đại AI bùng nổ, việc tạo slide thuyết trình chuyên nghiệp không còn là nỗi ám ảnh mất thời gian. Chỉ với một đoạn văn bản – hoặc thậm chí là một đoạn hội thoại – bạn có thể tạo ra bản trình bày đẹp mắt, ấn tượng chỉ trong vài phút.</p>
+        
+        <div class="image-container">
+            <img src="https://slidemodel.com/wp-content/uploads/FF0364-01-artificial-intelligence-slides-template-16x9-1.jpg" alt="AI Presentation">
+        </div>
+
+        <h2 class="text-3xl font-bold mb-6 text-center">⚡ 13 Công Cụ AI Giúp Tạo Slide Thuyết Trình Siêu Nhanh – Siêu Đẹp</h2>
+        <p class="text-base md:text-lg leading-relaxed mb-8 text-center">Dưới đây là danh sách 13 công cụ AI hàng đầu giúp bạn "nâng cấp" bài thuyết trình một cách thông minh, tiết kiệm thời gian nhưng vẫn đảm bảo tính chuyên nghiệp:</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Tool 1: Gamma -->
+            <div class="card">
+                <h3 class="text-xl font-bold mb-2 text-purple-700">🎯 1. Gamma</h3>
+                <p class="text-gray-700 mb-4">Trợ lý AI chuyên tạo slide từ nội dung bạn nhập vào: văn bản, ghi chú hoặc đoạn hội thoại. Gamma tự động chia nhỏ ý chính, sắp xếp lại thành một bài trình bày mạch lạc, đẹp mắt. Thiết kế hiện đại, phù hợp với giáo viên, người làm content và doanh nhân.</p>
+                <a href="https://gamma.app/" target="_blank" class="tool-button">Truy cập công cụ</a>
+            </div>
+
+            <!-- Tool 2: Decktopus AI -->
+            <div class="card">
+                <h3 class="text-xl font-bold mb-2 text-purple-700">🎯 2. Decktopus AI</h3>
+                <p class="text-gray-700 mb-4">Được mệnh danh là “Canva cho slide thuyết trình”, Decktopus AI giúp bạn nhập một vài gợi ý, chủ đề – AI sẽ tự động tạo nội dung, chọn hình ảnh, biểu tượng phù hợp và căn chỉnh bố cục hoàn chỉnh. Giao diện trực quan, dễ dùng cho cả người không rành công nghệ.</p>
+                <a href="https://www.decktopus.com/" target="_blank" class="tool-button">Truy cập công cụ</a>
+            </div>
+
+            <!-- Tool 3: Plus AI -->
+            <div class="card">
+                <h3 class="text-xl font-bold mb-2 text-purple-700">🎯 3. Plus AI</h3>
+                <p class="text-gray-700 mb-4">Công cụ tích hợp mạnh mẽ với PowerPoint và Google Slides. Bạn có thể khởi tạo một bản trình bày ngay trong giao diện quen thuộc. Plus AI cung cấp mẫu thiết kế cao cấp và gợi ý nội dung theo chủ đề cụ thể như startup, giáo dục, marketing...</p>
+                <a href="https://www.plusdocs.com/" target="_blank" class="tool-button">Truy cập công cụ</a>
+            </div>
+
+            <!-- Tool 4: Slides AI -->
+            <div class="card">
+                <h3 class="text-xl font-bold mb-2 text-purple-700">🎯 4. Slides AI</h3>
+                <p class="text-gray-700 mb-4">Chuyển văn bản thô thành slide tự động trong vài phút. Slides AI phân tích nội dung, chia thành từng slide phù hợp với thiết kế trực quan. Rất thích hợp cho sinh viên, giáo viên, nhân viên văn phòng làm báo cáo, bài giảng nhanh.</p>
+                <a href="https://www.slidesai.io/" target="_blank" class="tool-button">Truy cập công cụ</a>
+            </div>
+
+            <!-- Tool 5: Powtoon -->
+            <div class="card">
+                <h3 class="text-xl font-bold mb-2 text-purple-700">🎯 5. Powtoon</h3>
+                <p class="text-gray-700 mb-4">Không chỉ là slide, Powtoon biến nội dung bạn nhập thành video hoạt hình trình bày sống động. Giao diện kéo-thả, kho nhân vật hoạt hình và hiệu ứng đa dạng, rất thích hợp cho đào tạo, truyền thông nội bộ, giảng dạy online.</p>
+                <a href="https://www.powtoon.com/" target="_blank" class="tool-button">Truy cập công cụ</a>
+            </div>
+
+            <!-- Tool 6: SlideDog -->
+            <div class="card">
+                <h3 class="text-xl font-bold mb-2 text-purple-700">🎯 6. SlideDog</h3>
+                <p class="text-gray-700 mb-4">Một công cụ đặc biệt không chỉ tạo slide mà còn giúp trình chiếu đa định dạng: kết hợp PowerPoint, PDF, video, trang web… vào cùng một bài thuyết trình. Phù hợp với các buổi giới thiệu sản phẩm, sự kiện, hội thảo.</p>
+                <a href="https://slidedog.com/" target="_blank" class="tool-button">Truy cập công cụ</a>
+            </div>
+
+            <!-- Tool 7: Storydoc -->
+            <div class="card">
+                <h3 class="text-xl font-bold mb-2 text-purple-700">🎯 7. Storydoc</h3>
+                <p class="text-gray-700 mb-4">Tập trung vào storytelling – biến các slide tĩnh thành trang trình bày động dạng website với hiệu ứng cuộn, tương tác, dữ liệu động. Đây là công cụ cực mạnh cho sales, marketing, và giới thiệu sản phẩm.</p>
+                <a href="https://www.storydoc.com/" target="_blank" class="tool-button">Truy cập công cụ</a>
+            </div>
+
+            <!-- Tool 8: Prezi -->
+            <div class="card">
+                <h3 class="text-xl font-bold mb-2 text-purple-700">🎯 8. Prezi</h3>
+                <p class="text-gray-700 mb-4">Nền tảng tạo slide phi tuyến tính: bạn không phải trình chiếu từng trang theo thứ tự mà có thể di chuyển linh hoạt giữa các phần. Prezi nổi tiếng với hiệu ứng zoom mượt mà, tạo cảm giác trực quan và ấn tượng.</p>
+                <a href="https://prezi.com/" target="_blank" class="tool-button">Truy cập công cụ</a>
+            </div>
+
+            <!-- Tool 9: Presentify -->
+            <div class="card">
+                <h3 class="text-xl font-bold mb-2 text-purple-700">🎯 9. Presentify</h3>
+                <p class="text-gray-700 mb-4">Công cụ gọn nhẹ giúp tạo slide nhanh, dễ chỉnh sửa, phù hợp với những người cần chia sẻ trình bày online qua Zoom, Meet. Có các tính năng vẽ, làm nổi bật nội dung trực tiếp khi trình chiếu – rất hữu ích cho dạy học trực tuyến.</p>
+                <a href="https://presentify.app/" target="_blank" class="tool-button">Truy cập công cụ</a>
+            </div>
+
+            <!-- Tool 10: PitchGrade -->
+            <div class="card">
+                <h3 class="text-xl font-bold mb-2 text-purple-700">🎯 10. PitchGrade</h3>
+                <p class="text-gray-700 mb-4">Khác biệt ở chỗ: PitchGrade không tạo slide, mà là AI phân tích bài thuyết trình của bạn và đưa ra gợi ý cải thiện nội dung, ngôn ngữ, bố cục. Rất thích hợp cho các bản trình bày quan trọng như pitch gọi vốn, thuyết phục khách hàng.</p>
+                <a href="https://pitchgrade.com/" target="_blank" class="tool-button">Truy cập công cụ</a>
+            </div>
+
+            <!-- Tool 11: Pitch -->
+            <div class="card">
+                <h3 class="text-xl font-bold mb-2 text-purple-700">🎯 11. Pitch</h3>
+                <p class="text-gray-700 mb-4">Một giải pháp cộng tác tuyệt vời: cả nhóm có thể cùng làm slide, chỉnh sửa nội dung theo thời gian thực. Giao diện thân thiện, có sẵn hàng trăm template chuyên nghiệp. Phù hợp cho các team startup, marketing, và quản lý dự án.</p>
+                <a href="https://pitch.com/" target="_blank" class="tool-button">Truy cập công cụ</a>
+            </div>
+
+            <!-- Tool 12: SlideSpeak -->
+            <div class="card">
+                <h3 class="text-xl font-bold mb-2 text-purple-700">🎯 12. SlideSpeak</h3>
+                <p class="text-gray-700 mb-4">Bạn chỉ cần dán một đoạn văn bản – SlideSpeak sẽ tự động tách ý, chia nội dung thành slide có bố cục hợp lý và trình bày đẹp mắt. Rất tiện cho những ai cần làm bài giảng nhanh, bài thuyết trình từ nội dung có sẵn.</p>
+                <a href="https://slidespeak.co/" target="_blank" class="tool-button">Truy cập công cụ</a>
+            </div>
+
+            <!-- Tool 13: DeckRobot -->
+            <div class="card">
+                <h3 class="text-xl font-bold mb-2 text-purple-700">🎯 13. DeckRobot</h3>
+                <p class="text-gray-700 mb-4">Được dùng bởi nhiều doanh nghiệp lớn, DeckRobot có thể xử lý hàng trăm slide PowerPoint trong vài giây. Tự động căn chỉnh, chọn màu theo bộ nhận diện thương hiệu, chuẩn hóa thiết kế – tiết kiệm hàng giờ làm thủ công.</p>
+                <a href="https://deckrobot.com/" target="_blank" class="tool-button">Truy cập công cụ</a>
+            </div>
+        </div>
+
+        <h2 class="text-3xl font-bold mb-4 text-center">🎓 Kết Luận</h2>
+        <p class="text-base md:text-lg leading-relaxed mb-4">Làm slide không còn là việc “cắm cúi cả buổi” nữa. Giờ đây, với AI, bạn có thể tập trung vào nội dung – phần còn lại, hãy để công nghệ lo.</p>
+        <p class="text-base md:text-lg leading-relaxed mb-8">Dù bạn là giáo viên, sinh viên, marketer, CEO hay chỉ đơn giản là người hay phải trình bày trước đám đông – thì việc biết cách sử dụng công cụ AI sẽ giúp tiết kiệm thời gian – nâng cao chất lượng – gây ấn tượng tốt hơn.</p>
+    </main>
+
+    <!-- Footer Section -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+    
+    .ai-gradient {
+        background: linear-gradient(135deg, #0b0b3b 0%, #1a1a6c 50%, #3a0ca3 100%);
+        position: relative;
+        overflow: hidden;
+        font-family: 'Inter', sans-serif;
+    }
+    
+    .ai-circuit {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.1;
+        pointer-events: none;
+    }
+    
+    .logo-glow {
+        filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.8));
+    }
+    
+    .footer-link {
+        position: relative;
+        transition: all 0.3s ease;
+    }
+    
+    .footer-link:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: -2px;
+        left: 0;
+        background-color: #8a2be2;
+        transition: width 0.3s ease;
+    }
+    
+    .footer-link:hover:after {
+        width: 100%;
+    }
+    
+    .footer-link:hover {
+        color: #a855f7;
+    }
+    
+    .dot-separator {
+        display: inline-block;
+        margin: 0 6px;
+        opacity: 0.7;
+    }
+    
+    .social-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        margin: 0 8px;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+        overflow: hidden;
+    }
+    
+    .social-icon:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    }
+    
+    .social-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0 8px;
+    }
+    
+    .social-text {
+        margin-top: 4px;
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.8);
+        transition: all 0.3s ease;
+    }
+    
+    .social-item:hover .social-text {
+        color: white;
+    }
+    
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    .footer-container {
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    .icon-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .fb-icon, .yt-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .fb-icon {
+        background-color: #1877F2;
+    }
+    
+    .yt-icon {
+        background-color: #FF0000;
+    }
+    
+    @media (max-width: 768px) {
+        .footer-content {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        .footer-links {
+            margin-top: 1rem;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .dot-separator {
+            display: none;
+        }
+        
+        .footer-link {
+            margin: 0.4rem 0;
+        }
+        
+        .description-text {
+            max-width: 100%;
+        }
+        
+        .social-icons {
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-item {
+            margin: 8px 0;
+        }
+    }
+    
+    @media (max-width: 640px) {
+        .social-icons {
+            flex-direction: column;
+        }
+    }
+</style>
+<footer class="ai-gradient text-white">
+    <!-- AI Circuit Pattern Background -->
+    <svg class="ai-circuit" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <pattern id="circuit-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+            <path d="M10 10 L90 10 L90 90 L10 90 Z" fill="none" stroke="#ffffff" stroke-width="0.5"/>
+            <circle cx="10" cy="10" r="2" fill="#ffffff"/>
+            <circle cx="90" cy="10" r="2" fill="#ffffff"/>
+            <circle cx="90" cy="90" r="2" fill="#ffffff"/>
+            <circle cx="10" cy="90" r="2" fill="#ffffff"/>
+            <path d="M10 50 L40 50 L40 10" fill="none" stroke="#ffffff" stroke-width="0.5"/>
+            <path d="M90 50 L60 50 L60 90" fill="none" stroke="#ffffff" stroke-width="0.5"/>
+            <circle cx="40" cy="50" r="2" fill="#ffffff"/>
+            <circle cx="60" cy="50" r="2" fill="#ffffff"/>
+        </pattern>
+        <rect width="100%" height="100%" fill="url(#circuit-pattern)"/>
+    </svg>
+    
+    <div class="footer-container px-3 py-4">
+        <div class="footer-content flex flex-col items-center justify-center">
+            <!-- Logo and Description -->
+            <div class="flex flex-col items-center mb-2">
+                <div class="logo-glow rounded-full overflow-hidden w-16 h-16 flex-shrink-0 border-2 border-purple-400 mb-3">
+                    <img src="https://res.cloudinary.com/dejnvixvn/image/upload/v1747379764/ChatGPT_Image_Mar_31_2025_02_03_41_PM_qxeaeq.png" 
+                         alt="Quân H Logo" 
+                         class="w-full h-full object-cover">
+                </div>
+                <div class="text-center max-w-md">
+                    <p class="text-sm md:text-base font-medium description-text">
+                        Quân H – Giảng viên & Youtuber chia sẻ kiến thức AI, công nghệ và giáo dục.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Social Media Icons - Vertical Layout -->
+            <div class="social-icons flex flex-row md:flex-row justify-center flex-wrap">
+                <a href="https://www.facebook.com/tran.hong.quan.216221/" target="_blank" class="social-item">
+                    <div class="social-icon">
+                        <div class="fb-icon">
+                            <i class="fab fa-facebook-f text-white"></i>
+                        </div>
+                    </div>
+                    <span class="social-text">Trần Hồng Quân</span>
+                </a>
+                
+                <a href="javascript:void(0)" class="social-item" onclick="alert('Zalo: 0355.213.107')">
+                    <div class="social-icon p-0">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Icon_of_Zalo.svg/768px-Icon_of_Zalo.svg.png" 
+                             alt="Zalo" 
+                             class="icon-img">
+                    </div>
+                    <span class="social-text">0355.213.107</span>
+                </a>
+                
+                <a href="https://www.youtube.com/@quanh95" target="_blank" class="social-item">
+                    <div class="social-icon">
+                        <div class="yt-icon">
+                            <i class="fab fa-youtube text-white"></i>
+                        </div>
+                    </div>
+                    <span class="social-text">Quân H</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="border-t border-purple-900/50 mt-1 pt-3">
+            <div class="flex flex-wrap justify-center md:justify-between items-center text-xs text-purple-200/80">
+                <div class="mb-1 md:mb-0">
+                    © 2025 Quân H.
+                </div>
+                <div class="flex flex-wrap justify-center">
+                    <a href="#" class="footer-link mx-1">Chính sách bảo mật</a>
+                    <span class="dot-separator">•</span>
+                    <a href="#" class="footer-link mx-1">Điều khoản sử dụng</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
