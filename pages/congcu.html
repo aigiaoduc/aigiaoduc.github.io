@@ -8,8 +8,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="button.css">
-  <link rel="stylesheet" href="pagination.css">
+  <link rel="stylesheet" href="../assets/css/button.css">
+  <link rel="stylesheet" href="../assets/css/pagination.css">
   <style>
     *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
     body { font-family:'Inter',sans-serif; background:#111; color:#fff; }
@@ -79,7 +79,7 @@
         </div>
       </button>
     </div>
-    <a href="index.html" class="back">← Về Trang chủ</a>
+    <a href="../index.html" class="back">← Về Trang chủ</a>
   </div>
 
   <div id="footer-placeholder"></div>
@@ -90,7 +90,7 @@
     const itemsPerPage = 6;
 
     async function fetchTools() {
-      const res = await fetch('tools.json');
+      const res = await fetch('../data/tools.json');
       return res.json();
     }
 
@@ -154,7 +154,7 @@
     });
 
     // Tải menu.html vào placeholder
-    fetch('menu.html')
+    fetch('../assets/includes/menu.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('menu-placeholder').innerHTML = data;
@@ -173,7 +173,7 @@
         });
 
     // Tải footer.html vào placeholder
-    fetch('footer.html')
+    fetch('../assets/includes/footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;

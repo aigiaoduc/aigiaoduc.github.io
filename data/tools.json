@@ -1,49 +1,49 @@
 [
   {
     "title": "Trợ lý nhân tạo ChatGPT",
-    "url": "tools/tool3.html",
+    "url": "../tools/tool3.html",
     "image": "https://cdn.mediamart.vn/images/news/phien-ban-chatgpt-nao-ban-nen-dung_e5f47c45.jpg",
     "desc": "ChatGPT là một công cụ trí tuệ nhân tạo (AI) được phát triển bởi công ty OpenAI (Mỹ). Đây là một chatbot – nghĩa là một chương trình máy tính có thể trò chuyện với con người bằng ngôn ngữ tự nhiên, giống như cách bạn đang nhắn tin với một người bạn."
   },
   {
     "title": "Grok – Trợ lý AI “nổi loạn” từ Elon Musk",
-    "url": "tools/tool4.html",
+    "url": "../tools/tool4.html",
     "image": "https://www.pacisoft.vn/wp-content/uploads/2025/06/Grok-Logo.png",
     "desc": "Grok là một chatbot AI do công ty xAI của Elon Musk phát triển, ra mắt vào năm 2023. Không giống các AI “lịch sự” như ChatGPT hay Google Gemini, Grok được thiết kế để trả lời với phong cách hài hước, mỉa mai và... hơi “ngổ ngáo” – đúng như phong cách thường thấy của Elon Musk."
   },
   {
     "title": "Gemini – Trí tuệ nhân tạo đa năng của Google",
-    "url": "tools/tool5.html",
+    "url": "../tools/tool5.html",
     "image": "https://www.gstatic.com/lamda/images/gemini_thumbnail_v2_55a4e3be7b83404a620e5.jpg",
     "desc": "Gemini là nền tảng AI mới nhất đến từ Google, mang lại trải nghiệm thông minh, linh hoạt và trực quan trong việc xử lý văn bản, hình ảnh, âm thanh và nhiều hơn thế."
   },
   {
     "title": "Tạo Bài Thuyết Trình Chuyên Nghiệp Chỉ Trong Vài Phút Với Gamma AI",
-    "url": "tools/tool6.html",
+    "url": "../tools/tool6.html",
     "image": "https://tuilathao.com/wp-content/uploads/2024/03/Gamma-App-%E2%80%93-Tim-hieu-ve-AI-tao-slide-tu-dong.png",
     "desc": "Gamma AI là nền tảng giúp bạn tạo bài thuyết trình nhanh, đẹp và logic nhờ trí tuệ nhân tạo – không cần biết thiết kế, không cần chỉnh từng dòng từng khung như PowerPoint truyền thống."
   },
   {
     "title": "🚀 Cobalt.tools – Lưu mọi nội dung yêu thích, không giới hạn",
-    "url": "tools/tool7.html",
+    "url": "../tools/tool7.html",
     "image": "https://anonyviet.com/wp-content/uploads/2025/02/cobalttools-1-1.jpg",
     "desc": "Cobalt.tools giúp bạn tải xuống video, âm thanh, hình ảnh từ các nền tảng như YouTube, TikTok, Instagram… chỉ bằng cách dán link – không pop-up, không paywall, chỉ thuần công nghệ và trải nghiệm người dùng tốt nhất."
   },
   {
     "title": "🧠 Notebook LM – Trợ Lý Ghi Chú AI Từ Google",
-    "url": "tools/tool8.html",
+    "url": "../tools/tool8.html",
     "image": "https://file.hstatic.net/200000722513/file/notebooklm_7e16240f8f214ebd9f6bc5f39e60bb0b_1024x1024.jpg",
     "desc": "Trong thế giới mà thông tin ngày càng nhiều và việc ghi chú, tổ chức kiến thức trở thành nhu cầu thiết yếu – thì Notebook LM chính là một bước tiến lớn trong việc cá nhân hóa trải nghiệm học tập và nghiên cứu bằng AI."
   },
   {
     "title": "🤖 DeepSeek – Mô Hình AI Mã Nguồn Mở Đang Làm Nóng Cộng Đồng Công Nghệ",
-    "url": "tools/tool9.html",
+    "url": "../tools/tool9.html",
     "image": "https://cdnv2.tgdd.vn/mwg-static/common/News/1574589/cach-su-dung-deepseek-1.jpg",
     "desc": "Trong thế giới AI đang phát triển với tốc độ chóng mặt, hàng loạt mô hình lớn xuất hiện từ OpenAI, Google, Anthropic, Meta… Nhưng một cái tên mới nổi từ Trung Quốc đang thu hút rất nhiều sự chú ý từ giới công nghệ quốc tế: DeepSeek."
   },
   {
     "title": "🌟 BestList.ai – Trang Web Tổng Hợp Công Cụ AI Hàng Đầu",
-    "url": "tools/tool10.html",
+    "url": "../tools/tool10.html",
     "image": "https://bestlist.ai/images/logo.png",
     "desc": "Trong thời đại AI bùng nổ, có hàng ngàn công cụ hỗ trợ từ viết lách, đồ họa, lập trình đến quản lý công việc. Nhưng làm sao để chọn đúng công cụ phù hợp? BestList.ai chính là câu trả lời."
   }

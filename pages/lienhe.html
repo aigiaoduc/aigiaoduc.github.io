@@ -248,7 +248,7 @@
         }
 
         // Tải menu.html vào placeholder
-        fetch('menu.html')
+        fetch('../assets/includes/menu.html')
             .then(response => response.text())
             .then(data => {
                 document.getElementById('menu-placeholder').innerHTML = data;
