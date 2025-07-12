@@ -300,7 +300,7 @@
     renderSection('data/khoahoconline.json', 'courses-grid', 4);
 
     // Tải menu.html vào placeholder
-    fetch('assets/includes/menu.html')
+    fetch('/assets/includes/menu.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('menu-placeholder').innerHTML = data;
@@ -319,7 +319,7 @@
         });
     
     // Tải footer.html vào placeholder
-    fetch('assets/includes/footer.html')
+    fetch('/assets/includes/footer.html')
         .then(response => response.text())
         .then(data => {
             document.getElementById('footer-placeholder').innerHTML = data;
